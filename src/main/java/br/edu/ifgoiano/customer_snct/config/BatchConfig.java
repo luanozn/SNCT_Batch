@@ -40,7 +40,7 @@ public class BatchConfig {
                               CustomerWriter customerWriter){
 
         return stepBuilderFactory.get("customerStep")
-                .<Customer, Customer>chunk(2)
+                .<Customer, Customer>chunk(1)
                 .reader(customerReader)
                 .processor(customerProcessor)
                 .writer(customerWriter)
